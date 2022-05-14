@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { TeachersController } from 'src/controllers/teachers/teachers.controller';
+import { TeachersController } from './teachers.controller';
 import { teachersProvides } from 'src/providers/teachers/teachers.provides';
-import { TeachersService } from 'src/services/teachers/teachers.service';
+import { TeachersService } from './teachers.service';
 import { DatabaseModule } from '../database/database.module';
 
 DatabaseModule;

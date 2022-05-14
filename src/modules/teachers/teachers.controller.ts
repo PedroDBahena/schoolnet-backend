@@ -1,6 +1,6 @@
 import { Body, Controller, HttpStatus, Post, Res } from '@nestjs/common';
 import { CreateTeacherDto } from 'src/dto/teachers/create-teacher.dto';
-import { TeachersService } from 'src/services/teachers/teachers.service';
+import { TeachersService } from './teachers.service';
 
 @Controller('teachers')
 export class TeachersController {
