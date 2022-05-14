@@ -1,6 +1,11 @@
-import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-export const TeacherSchema = new mongoose.Schema({
-  name: String,
-  age: Number,
-});
+@Schema()
+export class Teacher {
+  @Prop({ required: true })
+  name: String;
+  @Prop({ required: true })
+  age: Number;
+}
+
+export const TeacherSchema = SchemaFactory.createForClass(Teacher);
