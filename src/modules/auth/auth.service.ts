@@ -3,6 +3,7 @@ import { Model } from 'mongoose';
 import { USER_MODEL } from 'src/constants';
 import { AuthDto } from 'src/dto/auth/auth.dto';
 import { User } from 'src/interfaces/users/user.interface';
+import * as bcryptjs from 'bcryptjs';
 
 @Injectable()
 export class AuthService {
@@ -11,8 +12,10 @@ export class AuthService {
   async login(authDto: AuthDto): Promise<User> {
     const { email, password } = authDto;
 
-    const userFound = await this.userModel.findOne({ email: email });
+    const user = await this.userModel.findOne({ email: email });
 
-    return userFound;
+    const validatePassword = bcryptjs.compareSync(password, user.password);
+
+    return validatePassword ? user : null;
   }
 }
