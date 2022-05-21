@@ -16,4 +16,9 @@ export class UsersService {
     const userCreated = new this.userModel(userDto);
     return userCreated.save();
   }
+
+  async findAll(): Promise<User[]> {
+    const users = this.userModel.find().exec();
+    return users;
+  }
 }
