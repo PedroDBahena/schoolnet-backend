@@ -5,10 +5,11 @@ import { DatabaseModule } from './modules/database/database.module';
 import { TeachersModule } from './modules/teachers/teachers.module';
 import { TeachersController } from './modules/teachers/teachers.controller';
 import { TeachersService } from './modules/teachers/teachers.service';
+import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
-  imports: [DatabaseModule, TeachersModule, AuthModule],
+  imports: [DatabaseModule, TeachersModule, UsersModule, AuthModule],
   controllers: [AppController, TeachersController],
   providers: [AppService, TeachersService],
 })
