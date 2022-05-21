@@ -4,6 +4,6 @@ export class UserDto {
   readonly age: number;
   readonly address: string;
   readonly email: string;
-  readonly password: string;
+  password: string;
   readonly role: string;
 }
