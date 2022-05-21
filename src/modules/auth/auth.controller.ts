@@ -10,7 +10,6 @@ export class AuthController {
   async login(@Body() authDto: AuthDto, @Res() response) {
     const user = await this.authService.login(authDto);
 
-    console.log('USER', user);
     if (user) {
       return response
         .status(HttpStatus.ACCEPTED)
