@@ -1,6 +1,8 @@
 import { Document } from 'mongoose';
 
 export interface Teacher extends Document {
-  readonly name: String;
-  readonly age: Number;
+  readonly name: string;
+  readonly age: number;
+  readonly email: string;
+  readonly password: string;
 }
