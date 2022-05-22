@@ -24,6 +24,7 @@ export class UsersController {
     return response.status(HttpStatus.CREATED).send({ message, user });
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get()
   async findAll(@Res() response) {
     const users = await this.usersService.findAll();

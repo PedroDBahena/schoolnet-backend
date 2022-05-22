@@ -5,7 +5,6 @@ import { usersProvider } from 'src/providers/users/users.provider';
 import { DatabaseModule } from '../database/database.module';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { LocalStrategy } from './local.strategy';
 import { jwtConstants } from "./constants";
 import { JwtStrategy } from './jwt.strategy';
 
@@ -15,9 +14,10 @@ import { JwtStrategy } from './jwt.strategy';
     PassportModule,
     JwtModule.register({
       secret: jwtConstants.secret,
+      signOptions: {expiresIn: "180m"}
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, ...usersProvider, LocalStrategy, JwtStrategy],
+  providers: [AuthService, ...usersProvider, JwtStrategy],
 })
 export class AuthModule {}
