@@ -9,6 +9,7 @@ import {
 import { JwtService } from '@nestjs/jwt';
 import { AuthDto } from 'src/dto/auth/auth.dto';
 import { AuthService } from './auth.service';
+import { LocalAuthGuard } from './local.auth.guard';
 
 @Controller('auth')
 export class AuthController {
